@@ -6,7 +6,7 @@
   @include('nav')
   <div class="container">
   @foreach($articles as $article)
-    <div class="card mt-3 #fce4ec pink lighten-5 mr-5">
+    <div class="card mt-3  mr-5">
       <div class="card-body d-flex flex-row">
         <i class="fas fa-carrot fa-3x mr-1"></i>
         <div>
