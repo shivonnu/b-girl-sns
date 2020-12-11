@@ -4,14 +4,15 @@
     <input
       type="hidden"
       name="tags"
-      placeholder="タグを5個まで入力できます"
       :value="tagsJson"
     >
 
     <vue-tags-input
       v-model="tag"
       :tags="tags"
+       placeholder="タグを5個まで入力できます"
       :autocomplete-items="filteredItems"
+      :add-on-key="[13, 32]"
       @tags-changed="newTags => tags = newTags"
     />
   </div>
