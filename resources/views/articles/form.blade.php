@@ -13,6 +13,7 @@
 </div>
 
 <div class="form-group">
+<input id="image" type="file" name="image" required value="{{ old('image') ?? $article->image ?? '' }}">
   <label></label>
   <textarea name="body" required class="form-control" rows="16" placeholder="本文">{{ old('body') ?? $article->body ?? '' }}</textarea>
 </div>
