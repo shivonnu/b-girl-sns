@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\Tag;
 use App\Http\Requests\ArticleRequest;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -38,6 +39,9 @@ class ArticleController extends Controller
     {
         $article->fill($request->all());
         $article->user_id = $request->user()->id;
+        $uploadImg =$article->image = $request->file('image');
+        $path = Storage::disk('s3')->putFile('/', $uploadImg, 'public');
+        $article->image = Storage::disk('s3')->url($path);
         $article->save();
         $request->tags->each(function ($tagName) use ($article) {
             $tag = Tag::firstOrCreate(['name' => $tagName]);
@@ -65,7 +69,11 @@ class ArticleController extends Controller
 
     public function update(ArticleRequest $request, Article $article)
     {
-        $article->fill($request->all())->save();
+        $article->fill($request->all());
+        $uploadImg =$article->image = $request->file('image');
+        $path = Storage::disk('s3')->putFile('/', $uploadImg, 'public');
+        $article->image = Storage::disk('s3')->url($path);
+        $article->save();
         $article->tags()->detach();
         $request->tags->each(function ($tagName) use ($article) {
             $tag = Tag::firstOrCreate(['name' => $tagName]);
