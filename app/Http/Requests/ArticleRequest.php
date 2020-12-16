@@ -27,6 +27,7 @@ class ArticleRequest extends FormRequest
             'title' => 'required|max:50',
             'body' => 'required|max:500',
             'tags' => 'json|regex:/^(?!.*\s).+$/u|regex:/^(?!.*\/).*$/u',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:5120|dimensions:max_width=5000'
         ];
     }
 
@@ -48,4 +49,5 @@ class ArticleRequest extends FormRequest
                 return $requestTag->text;
             });
     }
-}
+
+    }
