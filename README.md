@@ -1,78 +1,98 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
-
+# b-girl-sns 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+<img width="80%" alt="スクリーンショット 2020-12-16 18 43 17" src="https://user-images.githubusercontent.com/69893922/102341962-efe3bf00-3fdb-11eb-9b3d-f8297b692e0a.png" >
 </p>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## :ribbon: 開発環境 Dev
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- mac OS Catalina バージョン10.15.7
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- PHP 7.3.11
 
-## Learning Laravel
+- Laravel Framework 6.20.7
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- vue 2.6.12 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Visual Studio Code 1.52 
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+##  :ribbon: App URL
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+### **http://b-girl-sns.herokuapp.com/**  
 
-## Contributing
+## :ribbon: どういうものか
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- 文系女子が気楽に使える可愛い色のSNSです。思い思いにあった事を画像付きで書き込めます。
 
-## Code of Conduct
+## :ribbon: 構造
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- :cherry_blossom: ユーザー新規登録・ログイン機能
 
-## Security Vulnerabilities
+グーグルAPIを利用して新規登録、ログイン可能。メールアドレス、パスワード（２回入力）で登録します。パスワードをメールアドレスを介して再設定可能です(Sendgridを利用しています)。
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<p align="center">
+<img width="60%" alt="スクリーンショット 2020-12-16 20 21 42" src="https://user-images.githubusercontent.com/69893922/102342265-59fc6400-3fdc-11eb-869f-b1ff553b7b19.png" width=40%>
+</p>
 
-## License
+- :cherry_blossom: 記事投稿機能
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+タイトルとテキスト、画像一枚を投稿できます。画像はS3にアップロードしています。
+
+<p align="center">
+<img width="60%" alt="スクリーンショット 2020-12-16 20 30 01" src="https://user-images.githubusercontent.com/69893922/102343135-8369bf80-3fdd-11eb-8551-d1dbf9598d16.png">
+</p>
+
+- :cherry_blossom: 記事編集・削除機能
+
+記事内容を編集して更新でき、また記事を削除できます。
+
+<p align="center">
+<img width="60%" alt="スクリーンショット 2020-12-16 21 10 24" src="https://user-images.githubusercontent.com/69893922/102347026-296bf880-3fe3-11eb-9146-d600fccdeb9b.png">
+</p>
+
+
+- :cherry_blossom: タグ機能
+
+VueとBladeを介してタグを登録できます。タグをクリックすると同じ記事を並べられます。
+
+<p align="center">
+<img width="60%" alt="スクリーンショット 2020-12-16 20 37 53" src="https://user-images.githubusercontent.com/69893922/102344015-a0eb5900-3fde-11eb-97fa-d83afa0a463a.png">
+</p>
+
+- :cherry_blossom: いいね機能
+
+VueとBladeを介してBootstrapのアニメーションと共にいいねが付けられます。クリックすると同じ記事を並べられます。
+
+<p align="center">
+<img width="60%" alt="スクリーンショット 2020-12-16 21 11 51" src="https://user-images.githubusercontent.com/69893922/102347173-5b7d5a80-3fe3-11eb-8ea9-1ae6302f3214.png">
+</p>
+
+
+- :cherry_blossom: フォロー・フォロワー機能
+
+投稿者をクリックして遷移するフォローボタンからフォローができます。フォロー・フォロワー数をクリックすると一覧を並べられます。
+
+<p align="center">
+<img width="60%" alt="スクリーンショット 2020-12-16 21 13 24" src="https://user-images.githubusercontent.com/69893922/102347322-97b0bb00-3fe3-11eb-8313-281be386c31f.png">
+</p>
+
+
+
+## :ribbon: 構築方法 Usage
+
+```
+$ git clone https://github.com/shivonnu/b-girl-sns.git
+$ composer install
+.envファイルの設定
+$ php artisan key:generate
+$ php artisan migrate
+//ローカル環境のブラウザにてhttp://localhost:8080へアクセス
+```
+
+## :fireworks: 写真素材
+
+https://girlydrop.com/ GIRLY DROP（ガーリードロップ）
+
+
+
