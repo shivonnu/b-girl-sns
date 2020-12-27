@@ -84,9 +84,9 @@ VueとBladeを介してBootstrapのアニメーションと共にいいねが付
 ```
 #DockerDesktopインストール
 #Composerインストール
-% mkdr b-girl-sns
+% mkdir b-girl-sns
 % cd b-girl-sns
-b-giel-sns % mkdr laravel
+b-giel-sns % mkdir laravel
 b-giel-sns % cd laravel
 laravel % git clone https://github.com/shivonnu/b-girl-sns.git
 laravel % cp env-example .env
