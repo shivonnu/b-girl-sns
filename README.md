@@ -79,15 +79,43 @@ VueとBladeを介してBootstrapのアニメーションと共にいいねが付
 
 
 
-## :ribbon: 構築方法 Usage
+## :ribbon: 構築方法 
 
 ```
-$ git clone https://github.com/shivonnu/b-girl-sns.git
-$ composer install
-.envファイルの設定
-$ php artisan key:generate
-$ php artisan migrate
-//ローカル環境のブラウザにてhttp://localhost:8080へアクセス
+#DockerDesktopインストール
+#Composerインストール
+% mkdr b-girl-sns
+% cd b-girl-sns
+b-giel-sns % mkdr laravel
+b-giel-sns % cd laravel
+laravel % git clone https://github.com/shivonnu/b-girl-sns.git
+laravel % cp env-example .env
+#VisualStudioCodeで開いて.envファイルの編集 APP_NAME=b-girl-sns,DB_CONNECTION=pgsql,DB_HOST=postgres,DB_PORT=5432,DB_DATABASE=bgirlsns
+laravel % cd ../
+b-giel-sns % git clone https://github.com/Laradock/laradock.git laradock
+b-giel-sns % cd laradock
+laradock % cp env-example .env
+#VisualStudioCodeで開いて.envファイルの編集 APP_CODE_PATH_HOST=../laravel,DATA_PATH_HOST=../data,COMPOSE_PROJECT_NAME=b-girl-sns
+laradock % cd ../
+b-giel-sns % cd laravel
+laravel % composer install
+laravel % php artisan key:generate
+laravel % cd ../
+b-giel-sns % cd laradock
+laradock %  docker-compose up -d workspace php-fpm nginx postgres 
+#以下のようになればOK
+#Recreating b-girl-sns_php-fpm_1   ... done
+#Recreating b-girl-sns_workspace_1 ... done
+#Recreating b-girl-sns_postgres_1  ... done
+#Recreating b-girl-sns_nginx_1     ... done
+laradock %  docker-compose exec workspace psql -U default -h postgres
+＃secretと入力
+default=# create database bgirlsns;
+＃CREATE DATABASEと出ればOK
+default=# \q
+laradock % docker-compose exec workspace php artisan migrate
+laradock % docker-compose exec workspace npm install
+//ローカル環境のブラウザにてhttp://localhost:80へアクセス
 ```
 
 ## :fireworks: 写真素材
