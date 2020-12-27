@@ -115,7 +115,7 @@ default=# create database bgirlsns;
 default=# \q
 laradock % docker-compose exec workspace php artisan migrate
 laradock % docker-compose exec workspace npm install
-//ローカル環境のブラウザにてhttp://localhost:80へアクセス
+#ローカル環境のブラウザにてhttp://localhost:80へアクセス
 ```
 
 ## :fireworks: 写真素材
